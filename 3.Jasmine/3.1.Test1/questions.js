@@ -28,6 +28,7 @@ let SupprEspaceString =  (texte) => {
 }
 let IsString =  (texte) => {
     return typeof texte === "string" ? true : false
+    // ? true : false was not mandatory but since I need to get used to ternary operators...
 }
 
 let AfficherExtensionString =  (texte) => {
@@ -49,21 +50,16 @@ let InverseString =  (texte) => {
 /**
  * Exercices sur les nombres et les caluls mathématiques
  */
-let calculPuissance =  (x, y) => {
+let calculPuissance =  (x, y) => x ** y
 
-}
-let valeurAbsolue =  (nombre) => {
+let valeurAbsolue =  (nombre) => Math.abs(nombre)
 
-}
-let valeurAbsolueArray =  (array) => {
+let valeurAbsolueArray =  (array) => array.map((element) => Math.abs(element))
 
-}
-let sufaceCercle =  (rayon) => {
+let sufaceCercle =  (rayon) => Math.round(Math.PI * rayon ** 2)
 
-}
-let hypothenuse =  (ab, ac) => {
+let hypothenuse =  (ab, ac) => Math.hypot(ab, ac)
+// Or Math.sqrt(ab * ab + ac * ac) if we take no shortcut
 
-}
-let calculIMC =  (poids, taille) => {
-
-}
+let calculIMC =  (poids, taille) => Number((poids / taille ** 2).toFixed(2))
+// +(poids / taille ** 2).toFixed(2) works as well, while ~~(poids / taille ** 2).toFixed(2) returned 21 instead of 21.22
