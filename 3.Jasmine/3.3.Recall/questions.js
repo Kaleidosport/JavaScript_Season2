@@ -60,9 +60,7 @@ let formatDateNicely = (date) => date.toLocaleDateString("du-Be")
 
 let getDomainName = (string) => string.split("@").pop().split(".com").shift()
 
-let titleize = (string) => {
-    return 'Write your method here';
-}
+let titleize = (string) => string.replace(/(^[^ ])|(?<= )([^ at])|(?<=\. )([^ ])/g, (element) => element.toUpperCase())
 
 let checkForSpecialCharacters = (string) => /\W/g.test(string)
 
@@ -71,8 +69,23 @@ let squareRoot = (number) => Math.sqrt(number)
 let factorial = (number) => number <= 1 ? 1 : (number * factorial (number - 1))
 
 let findAnagrams = (string) => {
-    return 'Write your method here';
-}
+    let results = []
+    if (string.length === 1) {
+        results.push(string)
+        return results
+    }
+
+    for (let i = 0; i < string.length; i++) {
+        let firstChar = string[i]
+        let otherChar = string.substring(0, i) + string.substring(i + 1)
+        let otherAnagrams = findAnagrams(otherChar)
+
+        for (let j = 0; j < otherAnagrams.length; j++) {
+            results.push(firstChar + otherAnagrams[j])
+        }
+    }
+    return results
+} // Thanks to https://stackoverflow.com/questions/39927452/recursively-print-all-permutations-of-a-string-javascript
 
 let convertToCelsius = (number) => Math.round((number - 32) / 1.8)
 
