@@ -2,7 +2,7 @@ let selectElementsStartingWithA = (array) => array.filter((fruit) => fruit.start
 // Or array.filter(fruit => fruit[0] === "a")
 
 let selectElementsStartingWithVowel = (array) => array.filter(vowel => /^[aeiou]/i.test(vowel))
-// Or array.filter(word => word.charAt(0).match(/[aeyuio]+/))
+// Or array.filter(word => word.charAt(0).match(/[aeiou]+/))
 
 let removeNullElements = (array) => array.filter(element => element !== null)
 
