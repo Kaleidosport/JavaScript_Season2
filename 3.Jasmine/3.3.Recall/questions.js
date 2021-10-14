@@ -13,6 +13,7 @@ let everyPossiblePair = (array) => array.sort().map((character, index, sortedArr
 let allElementsExceptFirstThree = (array) => array.splice(3)
 
 let addElementToBeginning = (array, element) => (array.unshift(element), array)
+// Or [element, ...array]
 
 let sortByLastLetter = (array) => array.sort((a, b) => a.charCodeAt(a.length -1) - b.charCodeAt(b.length - 1))
 // https://www.codegrepper.com/code-examples/javascript/javascript+sort+array+by+last+letters
@@ -25,8 +26,10 @@ let numberOfPalindromes = (array) => array.filter(word => word === word.split(""
 // Or array.filter(word => word === [...word].reverse().join('')).length
 
 let shortestWord = (array) => [...array.sort((a, b) => a.length - b.length)][0]
+// Or array.reduce((a, b) => a.length < b.length ? a : b)
 
 let longestWord = (array) => [...array.sort((a, b) => b.length - a.length)][0]
+//Or array.reduce((a, b) => a.length > b.length ? a : b)
 
 let sumNumbers = (array) => array.reduce((a, b) => a + b, 0)
 
@@ -39,6 +42,8 @@ let calculateAverage = (array) => array.reduce((a, b) => a + b, 0) / array.lengt
 let getElementsUntilGreaterThanFive = (array) => array.slice(0, array.find((element) => element > 5))
 
 let convertArrayToObject = (array) => Object.fromEntries(array.map((element, index, arr) => (index % 2 === 1) ? [arr[index - 1], arr[index]] : null).filter(element => element !== null))
+// Or let convertArrayToObject = (array) => array.reduce((acc, current, index, arr) => (index % 2 ? acc[arr[index - 1]] = current : acc[current], acc), {})
+// index % 2 is the same as index % 2 === 1
 
 let getAllLetters = (array) => [...new Set(array)].join("").split("").sort()
 
