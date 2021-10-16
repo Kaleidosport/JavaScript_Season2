@@ -9,6 +9,7 @@ let removeNullElements = (array) => array.filter(element => element !== null)
 let removeNullAndFalseElements = (array) => array.filter(element => (element !== null && element !== false))
 
 let reverseWordsInArray = (array) => array.map(word => word.split("").reverse().join(""))
+// Or array.map(word => [...word].reverse().join(""))
 
 let everyPossiblePair = (array) => array.sort().map((character, index, sortedArray) => sortedArray.filter(char => char !== character)).reverse()
 
