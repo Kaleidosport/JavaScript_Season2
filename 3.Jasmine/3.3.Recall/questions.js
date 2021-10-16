@@ -21,6 +21,19 @@ let addElementToBeginning = (array, element) => (array.unshift(element), array)
 
 let sortByLastLetter = (array) => array.sort((a, b) => a.charCodeAt(a.length -1) - b.charCodeAt(b.length - 1))
 // https://www.codegrepper.com/code-examples/javascript/javascript+sort+array+by+last+letters
+/**
+ * Or
+ * let sortByLastLetter = (array) => {
+  for(let i = 0; i < array.length - 1; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if  (array[i].toString().slice(-1) > array[j].toString().slice(-1)) {
+        [array[i], array[j]] = [array[j], array[i]]
+      }
+    }
+  }
+  return array
+ }
+ */
 
 let getFirstHalf = (string) => string.substring(0, Math.round(string.length / 2))
 // Or string.length % 2 === 0 ? string.slice(0, string.length / 2) : string.slice(0, ~~(string.length / 2) + 1) or Match.ceil(string.length / 2) for the latter
