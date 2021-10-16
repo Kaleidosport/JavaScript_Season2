@@ -27,7 +27,7 @@ let getFirstHalf = (string) => string.substring(0, Math.round(string.length / 2)
 let makeNegative = (number) => -Math.abs(number)
 
 let numberOfPalindromes = (array) => array.filter(word => word === word.split("").reverse().join("")).length
-// Or array.filter(word => word === [...word].reverse().join('')).length
+// Or array.filter(word => word === [...word].reverse().join("")).length
 
 let shortestWord = (array) => [...array.sort((a, b) => a.length - b.length)][0]
 // Or array.reduce((a, b) => a.length < b.length ? a : b)
@@ -84,6 +84,7 @@ let roundUp = (number) => Math.ceil(number)
 // Or ~~number + 1
 
 let formatDateNicely = (date) => date.toLocaleDateString("du-Be")
+// Or ("0" + date.getDate()).slice(-2) + "/" + ("0" + (date.getMonth() + 1)).slice(-2) + "/" + date.getFullYear()
 
 let getDomainName = (string) => string.split("@").pop().split(".com").shift()
 // Or string.slice(string.indexOf("@") + 1, string.lastIndexOf("."))
