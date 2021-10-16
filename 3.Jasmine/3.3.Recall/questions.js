@@ -22,11 +22,12 @@ let sortByLastLetter = (array) => array.sort((a, b) => a.charCodeAt(a.length -1)
 // https://www.codegrepper.com/code-examples/javascript/javascript+sort+array+by+last+letters
 
 let getFirstHalf = (string) => string.substring(0, Math.round(string.length / 2))
+// Or string.length % 2 === 0 ? string.slice(0, string.length / 2) : string.slice(0, ~~(string.length / 2) + 1)
 
 let makeNegative = (number) => -Math.abs(number)
 
 let numberOfPalindromes = (array) => array.filter(word => word === word.split("").reverse().join("")).length
-// Or array.filter(word => word === [...word].reverse().join('')).length
+// Or array.filter(word => word === [...word].reverse().join("")).length
 
 let shortestWord = (array) => [...array.sort((a, b) => a.length - b.length)][0]
 // Or array.reduce((a, b) => a.length < b.length ? a : b)
