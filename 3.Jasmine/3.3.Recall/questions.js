@@ -44,8 +44,11 @@ let sumNumbers = (array) => array.reduce((a, b) => a + b, 0)
 Or same with .forEach instead of .map */
 
 let repeatElements = (array) => [...array, ...array]
+// Or Array.from({length: 2}, () => array).flat() or [...array.join("").repeat(2).split("")]
+// Or Array(array.length * 2).fill().map((a, i) => array[i % array.length])
 
 let stringToNumber = (string) => Number(string)
+// Or +string
 
 let calculateAverage = (array) => array.reduce((a, b) => a + b, 0) / array.length
 /* Or let calculateAverage = (array) => {
