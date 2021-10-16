@@ -22,12 +22,12 @@ let sortByLastLetter = (array) => array.sort((a, b) => a.charCodeAt(a.length -1)
 // https://www.codegrepper.com/code-examples/javascript/javascript+sort+array+by+last+letters
 
 let getFirstHalf = (string) => string.substring(0, Math.round(string.length / 2))
-// Or string.length % 2 === 0 ? string.slice(0, string.length / 2) : string.slice(0, ~~(string.length / 2) + 1)
+// Or string.length % 2 === 0 ? string.slice(0, string.length / 2) : string.slice(0, ~~(string.length / 2) + 1) or Match.ceil(string.length / 2) for the latter
 
 let makeNegative = (number) => -Math.abs(number)
 
 let numberOfPalindromes = (array) => array.filter(word => word === word.split("").reverse().join("")).length
-// Or array.filter(word => word === [...word].reverse().join("")).length
+// Or array.filter(word => word === [...word].reverse().join('')).length
 
 let shortestWord = (array) => [...array.sort((a, b) => a.length - b.length)][0]
 // Or array.reduce((a, b) => a.length < b.length ? a : b)
@@ -40,13 +40,20 @@ let sumNumbers = (array) => array.reduce((a, b) => a + b, 0)
         let secondBatch = 0
         array.map(elem => secondBatch += elem)
         return secondBatch
-      } */
+      } 
+Or same with .forEach instead of .map */
 
 let repeatElements = (array) => [...array, ...array]
 
 let stringToNumber = (string) => Number(string)
 
 let calculateAverage = (array) => array.reduce((a, b) => a + b, 0) / array.length
+/* Or let calculateAverage = (array) => {
+        let secondBatch = 0
+        array.forEach(elem => secondBatch += elem)
+        return secondBatch / array.length
+      } 
+Or same with .map instead of forEach */
 
 let getElementsUntilGreaterThanFive = (array) => array.slice(0, array.find((element) => element > 5))
 // Or array.slice(0, array.indexOf(6)) but that's too cheap imo
