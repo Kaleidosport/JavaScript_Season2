@@ -35,6 +35,11 @@ let longestWord = (array) => [...array.sort((a, b) => b.length - a.length)][0]
 // Or array.reduce((a, b) => a.length > b.length ? a : b)
 
 let sumNumbers = (array) => array.reduce((a, b) => a + b, 0)
+/* Or let sumNumbers = (array) => {
+        let secondBatch = 0
+        array.map(elem => secondBatch += elem)
+        return secondBatch
+      } */
 
 let repeatElements = (array) => [...array, ...array]
 
@@ -62,8 +67,10 @@ let swapKeysAndValues = (object) => {
 let sumKeysAndValues = (object) => Object.entries(object).join(",").split(",").reduce(((a, b) => Number(a) + Number(b)))
 
 let removeCapitals = (string) => string.replace(/[A-Z]/g, "")
+// Or string.split(/[A-Z]/g).join("")
 
 let roundUp = (number) => Math.ceil(number)
+// Or ~~number + 1
 
 let formatDateNicely = (date) => date.toLocaleDateString("du-Be")
 
@@ -98,6 +105,7 @@ let findAnagrams = (string) => {
 } // Thanks to https://stackoverflow.com/questions/39927452/recursively-print-all-permutations-of-a-string-javascript
 
 let convertToCelsius = (number) => Math.round((number - 32) / 1.8)
+// Or ~~((number - 31) / 1.8) cause ~~ - meaning NOT NOT - acts as Math.floor(), not Math.round(). Hence number + 1 - 32, hence number - 31.
 
 let letterPosition = (array) => array.map(element => element.toLowerCase().charCodeAt(0) - 96)
 // Or using .map() method after specifying the whole alphabet through a dedicated variable...
