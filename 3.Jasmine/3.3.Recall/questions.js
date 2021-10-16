@@ -107,6 +107,7 @@ let getDomainName = (string) => string.split("@").pop().split(".com").shift()
 let titleize = (string) => string.replace(/(^[^ ])|(?<= )([^ at])|(?<=\. )([^ ])/g, (element) => element.toUpperCase())
 
 let checkForSpecialCharacters = (string) => /\W/g.test(string)
+// Or /\!/g.test(string)
 
 let squareRoot = (number) => Math.sqrt(number)
 
